@@ -1,4 +1,4 @@
-import { Column, Model, Table } from "sequelize-typescript"
+import { Column, Default, Model, Table } from "sequelize-typescript"
 
 @Table
 export class Usuario extends Model{
@@ -10,4 +10,8 @@ export class Usuario extends Model{
     correo: string
     @Column
     contrasena: string
+
+    @Default(1)
+    @Column
+    rolId: number
 }
