@@ -1,0 +1,20 @@
+.inputTexto {
+    width: 100%;
+    height: 40px;
+    background: #ffffff!important;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    border-width: 0px !important;
+    flex-grow: 0;
+    z-index: 2;
+}
+
+.inputTexto>input {
+    outline: none;
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 20px;
+    top: 50%;
+    border-width: 0px !important;
+    background-color: transparent;
+}

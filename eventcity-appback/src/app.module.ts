@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { UsersModule } from './users/users.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { RolesModule } from './roles/roles.module';
+import { AutenticacionModule } from './autenticacion/autenticacion.module';
 
 @Module({
   imports: [
@@ -12,13 +12,13 @@ import { RolesModule } from './roles/roles.module';
       port: 3306,
       username: 'root',
       password: '',
-      database: 'eventcity-app',
+      database: 'mibasededatos',
       autoLoadModels: true,
       synchronize: true,
     }),
-    UsersModule,
     UsuariosModule,
     RolesModule,
+    AutenticacionModule,
   ],
 })
 export class AppModule {}

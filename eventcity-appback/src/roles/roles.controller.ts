@@ -8,11 +8,11 @@ export class RolesController {
 
     @Post()
     insertRol(@Body() rolesDto: CrearRolDto){
-        return this.service.insert(rolesDto)
+           return this.service.insert(rolesDto)
     }
 
     @Get('permisos')
     getRoles(){
-        return this.service.getPermisos()
+       return this.service.getPermisos() 
     }
 }

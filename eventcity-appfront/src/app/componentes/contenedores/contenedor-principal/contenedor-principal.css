@@ -1,0 +1,16 @@
+.contenedor-principal{
+    width: 35%;
+    height: 450px;
+    margin-top: 10%;
+    padding: 70px 45px 20px;
+    background-color: #ffffff75 !important;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.contenedor-principal a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
