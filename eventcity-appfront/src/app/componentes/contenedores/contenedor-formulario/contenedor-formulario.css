@@ -1,4 +1,4 @@
-.contenedor-principal{
+.contenedor-formulario{
     width: 35%;
     height: 450px;
     margin-top: 10%;
@@ -8,7 +8,7 @@
     color: #ffffff;
 }
 
-.contenedor-principal a{
+.contenedor-formulario a{
     color: #fff;
     font-size: 14px;
     font-weight: bold;

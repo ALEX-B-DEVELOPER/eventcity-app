@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import './componentes/contenedores/contenedor-principal/contenedor-principal.css'
-import './componentes/contenedores/contenedor-display/contenedor-display.css'
+import '../contenedores/contenedor-formulario/contenedor-formulario.css'
+import '../contenedores/contenedor-display/contenedor-display.css'
 import InputText from '../formularios/input_texto';
 import BotonPrincipal from '../formularios/boton_principal';
 import axios from 'axios';
@@ -48,7 +48,7 @@ export default function Login() {
         <h1>ACCEDE A <br/>NUESTRA <br/>PLATAFORMA <br/>DE EVENTOS</h1>
       </div>
 
-      <div className='contenedor-principal'>
+      <div className='contenedor-formulario'>
         <h1>BIENVENIDO</h1>
         <br />
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
