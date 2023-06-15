@@ -8,6 +8,7 @@ export class AutenticacionController {
 
     @Post("login")
     async login(@Body() authDto: AuthDto) : Promise<any> {
+        
         return this.authService.queryLogin(authDto)
         
     }

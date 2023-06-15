@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import './componentes/contenedores/contenedor-principal/contenedor-principal.css'
 import './componentes/contenedores/contenedor-display/contenedor-display.css'
-import InputText from './componentes/formularios/input_texto';
-import BotonPrincipal from './componentes/formularios/boton_principal';
+import InputText from '../formularios/input_texto';
+import BotonPrincipal from '../formularios/boton_principal';
 import axios from 'axios';
 
 
-export default function Home() {
+export default function Login() {
   
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')

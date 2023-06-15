@@ -12,7 +12,7 @@ import { AutenticacionModule } from './autenticacion/autenticacion.module';
       port: 3306,
       username: 'root',
       password: '',
-      database: 'mibasededatos',
+      database: 'eventcity-app',
       autoLoadModels: true,
       synchronize: true,
     }),
