@@ -1,0 +1,8 @@
+.contenedor-admin-sidebar{
+    width: 24%;
+    margin: 1%;
+    padding: 50px 25px;
+    background-color: #ffffff !important;
+    border-radius: 5px;
+    text-align: center;
+}
