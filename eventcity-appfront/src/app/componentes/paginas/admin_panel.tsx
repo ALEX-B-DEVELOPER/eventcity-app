@@ -7,7 +7,6 @@ import InputText from '../formularios/input_texto';
 import BotonPrincipal from '../formularios/boton_principal';
 import axios from 'axios';
 
-
 export default function AdminPanel() {
   
   const [correo, setCorreo] = useState('')
@@ -48,7 +47,7 @@ export default function AdminPanel() {
       <div className='contenedor-admin-sidebar'> 
         <h3>ADMINISTRADOR</h3>
         <img src='../../assets/profile.png'></img>
-        <p><strong>Nombre Apellido</strong></p>
+        <p><strong>{sessionStorage.getItem("nombre")}</strong></p>
         <p><strong>correo@electronico.com</strong></p>
         <a href="#">Editar Perfil</a>
         <hr></hr>

@@ -5,10 +5,12 @@ import '../contenedores/contenedor-display/contenedor-display.css'
 import InputText from '../formularios/input_texto';
 import BotonPrincipal from '../formularios/boton_principal';
 import axios from 'axios';
+import { redirect, useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
   
+  const navigate = useNavigate() 
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')
 
@@ -35,10 +37,10 @@ export default function Login() {
         console.log(response.data);
         SessionDataStorage(response.data.access_token, "token")
         SessionDataStorage(response.data.nombre, "nombre")
+        navigate("/home")
       })
       .catch(function (error) {
         console.log(error);
-
       });
   }
   return (
