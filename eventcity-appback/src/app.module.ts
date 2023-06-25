@@ -3,6 +3,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { RolesModule } from './roles/roles.module';
 import { AutenticacionModule } from './autenticacion/autenticacion.module';
+import { EventosModule } from './eventos/eventos.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { AutenticacionModule } from './autenticacion/autenticacion.module';
     UsuariosModule,
     RolesModule,
     AutenticacionModule,
+    EventosModule,
   ],
 })
 export class AppModule {}

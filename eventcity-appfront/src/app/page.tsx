@@ -13,7 +13,7 @@ import RootLayout from './layout';
 
 const Layout = () => {
   return (
-    <>
+    <main>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <a className="navbar-brand" href="#">EVENTCITY</a>
@@ -49,7 +49,7 @@ const Layout = () => {
       </nav>
       
       <Outlet />
-    </>
+    </main>
   )
 };
 

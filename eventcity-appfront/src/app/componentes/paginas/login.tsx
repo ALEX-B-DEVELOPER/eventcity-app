@@ -9,7 +9,7 @@ import { redirect, useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
-  
+
   const navigate = useNavigate() 
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')
