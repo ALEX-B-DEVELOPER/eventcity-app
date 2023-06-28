@@ -15,7 +15,7 @@ export default function FormularioCrearEvento(){
     const [Direccion, setDireccion] = useState('')
     const [MapaUbicacion, setMapaUbicacion] = useState('')
     const [Audiencia, setAudiencia] = useState('')
-    const [TipoEvento, setTipoEvento] = useState('')
+    const [Categoria, setCategoria] = useState('')
     const [Imagen, setImagen] = useState('')
     const [Descripcion, setDescrpcion] = useState('')
 
@@ -37,8 +37,8 @@ export default function FormularioCrearEvento(){
     const handleAudiencia = (e: string)=>{
         setAudiencia(e)
     }
-    const handleTipoEvento = (e: string)=>{
-        setTipoEvento(e)
+    const handleCategoria = (e: string)=>{
+        setCategoria(e)
     }
     const handleImagen = (e: string)=>{
         setImagen(e)
@@ -55,7 +55,7 @@ export default function FormularioCrearEvento(){
             lugar: Direccion,
             mapaLugar: MapaUbicacion,
             audiencia: Audiencia,
-            categoria: TipoEvento,
+            categoria: Categoria,
             imagen: Imagen,
             descripcion: Descripcion
         })
@@ -81,7 +81,7 @@ export default function FormularioCrearEvento(){
                             <InputText hint="Dirección" id="direccion" type="text" handleInput={handleDireccion}/>
                             <InputText hint="Mapa ubicación" id="mapaUbicacion" type="textarea" handleInput={handleMapaUbicacion}/>
                             <InputText hint="Audiencia" id="audiencia" type="text" handleInput={handleAudiencia}/>
-                            <InputText hint="Tipo de Evento" id="tipo" type="text" handleInput={handleTipoEvento}/>
+                            <InputText hint="Categoria" id="categoria" type="text" handleInput={handleCategoria}/>
                             <InputText hint="Imagen" id="imagen" type="text" handleInput={handleImagen}/>
                             <InputText hint="Descripción" id="imagen" type="text" handleInput={handleDescripcion}/>
                             <br />

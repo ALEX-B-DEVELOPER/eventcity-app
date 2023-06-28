@@ -7,12 +7,25 @@ export class Usuario extends Model {
     @Column
     apellidos: string
     @Column
+    telefono: string
+    @Column
     correo: string
     @Column
     contrena: string
-    @Column
-    direccion: string
     @Default(1)
     @Column
     rolId: number
+
+    @Column
+    organizacion: string
+    @Column
+    website: string
+    @Column
+    imagen: string
+    @Column
+    descripcion: string
+
+    @Default(true)
+    @Column    
+    estado: boolean
 }

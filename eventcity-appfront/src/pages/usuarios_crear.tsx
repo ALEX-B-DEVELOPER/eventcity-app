@@ -11,10 +11,15 @@ export default function FormularioCrearUsuario(){
 
     const [Nombres, setNombres] = useState('')
     const [Apellidos, setApellidos] = useState('')
+    const [Telefono, setTelefono] = useState('')
     const [Correo, setCorreo] = useState('')
     const [Contrasena, setContrasena] = useState('')
-    const [Direccion, setDireccion] = useState('')
     const [RolId, setRolId] = useState('')
+
+    const [Organizacion, setOrganizacion] = useState('')
+    const [Website, setWebsite] = useState('')
+    const [Imagen, setImagen] = useState('')
+    const [Descripcion, setDescripcion] = useState('')
 
     const handleNombres = (e: string)=>{
         setNombres(e)
@@ -22,11 +27,11 @@ export default function FormularioCrearUsuario(){
     const handleApellidos = (e: string)=>{
         setApellidos(e)
     }
+    const handleTelefono = (e: string)=>{
+        setTelefono(e)
+    }
     const handleCorreo = (e: string)=>{
         setCorreo(e)
-    }
-    const handleDireccion = (e: string)=>{
-        setDireccion(e)
     }
     const handleContrasena = (e: string)=>{
         setContrasena(e)
@@ -35,14 +40,32 @@ export default function FormularioCrearUsuario(){
         setRolId(e)
     }
 
+    const handleOrganizacion = (e: string)=>{
+        setOrganizacion(e)
+    }
+    const handleWebsite = (e: string)=>{
+        setWebsite(e)
+    }
+    const handleImagen = (e: string)=>{
+        setImagen(e)
+    }
+    const handleDescripcion = (e: string)=>{
+        setDescripcion(e)
+    }
+
     const registrarUsuario = () => {
         axios.post(`http://localhost:3001/usuarios`,{
             nombres: Nombres,
             apellidos: Apellidos,
             correo: Correo,
-            contrasena: Contrasena,
-            direccion: Direccion,
+            contrena: Contrasena,
+            telefono: Telefono,
             rolid: RolId,
+
+            organizacion: Organizacion,
+            website: Website,
+            imagen: Imagen,
+            descripcion: Descripcion
         })
     }
 
@@ -62,12 +85,17 @@ export default function FormularioCrearUsuario(){
                             <hr />
                             <InputText hint="Nombres" id="nombre" type="text" handleInput={handleNombres}/>
                             <InputText hint="Apellidos" id="apellidos" type="text" handleInput={handleApellidos}/>
+                            <InputText hint="Teléfono" id="telefono" type="text" handleInput={handleTelefono}/>
                             <InputText hint="Correo" id="correo" type="text" handleInput={handleCorreo}/>
                             <InputText hint="Contraseña" id="contrasena" type="text" handleInput={handleContrasena}/>
-                            <InputText hint="Dirección" id="direccion" type="text" handleInput={handleDireccion}/>
-                            <InputText hint="Rol ID" id="rol-id" type="textarea" handleInput={handleRolId}/>
+                            <InputText hint="Rol ID" id="rol-id" type="text" handleInput={handleRolId}/>
+                            <hr />
+                            <InputText hint="Organización" id="organizacion" type="text" handleInput={handleOrganizacion}/>
+                            <InputText hint="Website" id="website" type="text" handleInput={handleWebsite}/>
+                            <InputText hint="Imagen" id="imagen" type="text" handleInput={handleImagen}/>
+                            <InputText hint="Descripción" id="descripcion" type="text" handleInput={handleDescripcion}/>
                             <br />
-                            <BotonPrincipal texto="Crear Evento" callBack={registrarUsuario}></BotonPrincipal>
+                            <BotonPrincipal texto="Crear Usuario" callBack={registrarUsuario}></BotonPrincipal>
                         </div>
                     </div>
                 </div>

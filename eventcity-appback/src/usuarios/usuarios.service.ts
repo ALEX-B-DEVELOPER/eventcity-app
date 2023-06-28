@@ -6,6 +6,7 @@ import { CrearUsuarioDto } from './dto/crear-usuario-dto';
 import { AuthDto } from 'src/autenticacion/dto/auth-dto';
 
 var md5 = require('md5');
+
 @Injectable()
 export class UsuariosService {
 
@@ -20,9 +21,16 @@ export class UsuariosService {
         return this.usuarioModel.create({
             nombres: dto.nombres,
             apellidos: dto.apellidos,
+            telefono: dto.telefono,
             correo: dto.correo,
             contrena: md5(dto.contrena),
-            direccion: dto.direccion,
+            rolId: dto.rolId,
+
+            organizacion: dto.organizacion,
+            website: dto.website,
+            imagen: dto.imagen,
+            descripcion: dto.descripcion
+
         })
     }
 
