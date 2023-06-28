@@ -11,12 +11,8 @@ export default function Home() {
       .then(function (response) {
         console.log(response.data);
         log = response.data
-  
-  
       })
-      .catch(function (error) {
-  
-      });
+      .catch(function (error) { });
   
     return (
       <div>
@@ -38,7 +34,7 @@ export default function Home() {
   }
   return (
     <div className="container">
-      <div className='contenedor-principal offset-md-4'>
+      <div className='contenedor-principal'>
         {Home()}
       </div>
     </div>

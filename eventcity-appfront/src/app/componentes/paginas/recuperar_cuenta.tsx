@@ -43,12 +43,13 @@ export default function Recuperar() {
   }
   return (
     <div className="container">
+      <div className="row">
 
-      <div className='contenedor-display'> 
+      <div className='col-sm-8 contenedor-display'> 
         <h1>REESTABLECIMIENTO<br/>DE CONTRASEÑA</h1>
       </div>
 
-      <div className='contenedor-formulario'>
+      <div className='col-sm-4 contenedor-formulario'>
         <h1>HE OLVIDADO <br /> LA CONTRASEÑA</h1>
         <br />
         Ingresa el correo electrónico registrado para recibir el reestablecimiento de la contraseña.
@@ -57,6 +58,8 @@ export default function Recuperar() {
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
         <br />
         <BotonPrincipal texto='Enviar' callBack={login} />
+      </div>
+
       </div>
     </div>
   )

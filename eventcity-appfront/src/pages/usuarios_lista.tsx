@@ -1,47 +1,66 @@
 "use client";
-import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import AdminMenu from "@/app/componentes/paginas/admin_menu";
+import '../app/componentes/contenedores/contenedor-admin-panel/contenedor-admin-panel.css';
 
-export default function Usuarios() {
 
-  console.log("Entro a la funcion usuarios");
-  const Usuarios = async () => {
-    var log = [{ nombres: "", apellidos: "", correo: "" }]
+export default async function Usuarios() {
+
+
+    var log = [{ nombres: "", apellidos: "", correo: "", rolId: "" }]
     await axios.get(`http://localhost:3001/usuarios`)
       .then(function (response) {
-        console.log("Entro a la promesa");
         console.log(response.data);
         log = response.data
-  
       })
-      .catch(function (error) {
-  
-      });
+      .catch(function (error) { });
   
     return (
-      <div>
-        <table className="table">
-          <tbody>
-            {log.map((number) =>
-              <tr>
-                <td>{number.apellidos}</td>
-                <td>{number.nombres}</td>
-                <td>{number.correo}</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+      <div className="container">
+      <div className="row">
+
+          <div className='col-sm-3'> 
+          {<AdminMenu />} 
+          </div>
+
+          <div className='col-sm-9'> 
+              <div className='contenedor-admin-panel'>
+                <h1>Usuarios</h1>
+                <Link to={"/usuarios/crear"} className="btn btn-primary">Nuevo Usuario</Link>
+                <hr />
+              <br />
+
+                  <table className="table" >
+                  <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Correo</th>
+                                <th>Rol de usuario</th>
+                                <th>Acciones: Editar/Eliminar</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                      {log.map((number) =>
+              
+                        <tr>
+                          <td>{number.apellidos}</td>
+                          <td>{number.nombres}</td>
+                          <td>{number.correo}</td>
+                          <td>{number.rolId}</td>
+                          <td>
+                          <Link to={""} className="btn btn-primary">Editar</Link>
+                          &nbsp;
+                          <Link to={""} className="btn btn-primary">Eliminar</Link>
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+            </div>
       </div>
     )
-  
-  }
-  return (
-    <div>
-      <div>
-        <li>
-        {Usuarios()}
-        </li>
-      </div>
-    </div>
-  )
 }

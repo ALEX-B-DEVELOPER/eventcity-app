@@ -43,15 +43,16 @@ export default function Registro() {
   }
   return (
     <div className="container">
+      <div className="row">
 
-      <div className='contenedor-display'> 
+      <div className='col-sm-8 contenedor-display'> 
         <h1>REGÍSTRATE EN <br/>NUESTRA PLATAFORMA<br/>PARA QUE NO TE PIERDAS <br/>NINGÚN EVENTO...</h1>
         <br />
         <br />
         <p>Si quieres registrarte como organizador contáctanos haciendo click aquí. </p>
       </div>
 
-      <div className='contenedor-formulario'>
+      <div className='col-sm-4 contenedor-formulario'>
         <h1>REGISTRO</h1>
         <br />
         <InputText id='nombres' hint="Nombres" type='text' handleInput={handleInput} />
@@ -71,6 +72,8 @@ export default function Registro() {
         <br />
         <BotonPrincipal texto='Registrarse' callBack={login} />
         <br />        
+      </div>
+
       </div>
     </div>
   )

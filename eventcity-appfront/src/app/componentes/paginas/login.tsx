@@ -45,12 +45,13 @@ export default function Login() {
   }
   return (
     <div className="container">
+      <div className="row">
 
-      <div className='contenedor-display'> 
+      <div className='col-sm-8 contenedor-display'> 
         <h1>ACCEDE A <br/>NUESTRA <br/>PLATAFORMA <br/>DE EVENTOS</h1>
       </div>
 
-      <div className='contenedor-formulario'>
+      <div className='col-sm-4 contenedor-formulario'>
         <h1>BIENVENIDO</h1>
         <br />
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
@@ -63,6 +64,8 @@ export default function Login() {
         <a href="#">¿Perdiste tu contraseña? Click Aquí.</a>
         <br />
         <a href="#">¿No tienes cuenta? Regístrate.</a>
+      </div>
+
       </div>
     </div>
   )

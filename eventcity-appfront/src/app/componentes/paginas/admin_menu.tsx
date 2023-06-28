@@ -1,13 +1,10 @@
 "use client";
 import React, { useState } from 'react';
-import '../contenedores/contenedor-formulario/contenedor-formulario.css'
-import '../contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar.css'
-import '../contenedores/contenedor-admin-panel/contenedor-admin-panel.css'
-import InputText from '../formularios/input_texto';
-import BotonPrincipal from '../formularios/boton_principal';
+import '../contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-export default function AdminPanel() {
+export default function AdminMenu() {
   
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')
@@ -42,7 +39,6 @@ export default function AdminPanel() {
       });
   }
   return (
-    <div className="container">
 
       <div className='contenedor-admin-sidebar'> 
         <h3>ADMINISTRADOR</h3>
@@ -54,8 +50,8 @@ export default function AdminPanel() {
 
 
     <div className="list-group" id="list-tab" role="tablist">
-      <a className="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">USUARIOS</a>
-      <a className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">EVENTOS</a>
+      <Link className="nav-link list-group-item list-group-item-action" to="/usuarios">USUARIOS</Link>
+      <Link className="nav-link list-group-item list-group-item-action" to="/eventos">EVENTOS</Link>
       <a className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ENTRADAS</a>
       <a className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">VENTAS</a>
     </div>
@@ -63,10 +59,5 @@ export default function AdminPanel() {
     <a href="#">Cerrar Sessión</a>
     
       </div>
-
-      <div className='contenedor-admin-panel'>
-
-      </div>
-    </div>
   )
 }
