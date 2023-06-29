@@ -83,19 +83,71 @@ export default function FormularioCrearUsuario(){
                             <h1>Nuevo Usuario</h1>
                             <Link to={"/usuarios"} className="btn btn-primary">Atrás | Usuarios</Link>
                             <hr />
-                            <InputText hint="Nombres" id="nombre" type="text" handleInput={handleNombres}/>
-                            <InputText hint="Apellidos" id="apellidos" type="text" handleInput={handleApellidos}/>
-                            <InputText hint="Teléfono" id="telefono" type="text" handleInput={handleTelefono}/>
-                            <InputText hint="Correo" id="correo" type="text" handleInput={handleCorreo}/>
-                            <InputText hint="Contraseña" id="contrasena" type="text" handleInput={handleContrasena}/>
-                            <InputText hint="Rol ID" id="rol-id" type="text" handleInput={handleRolId}/>
+                            <form>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >NOMBRES</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Nombres" id="nombre" type="text" handleInput={handleNombres}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >APELLIDOS</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Apellidos" id="apellidos" type="text" handleInput={handleApellidos}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >TELÉFONO</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Teléfono" id="telefono" type="text" handleInput={handleTelefono}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >CORREO</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Correo" id="correo" type="text" handleInput={handleCorreo}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >CONTRASEÑA</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Contraseña" id="contrasena" type="text" handleInput={handleContrasena}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >ROL DE USUARIO</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Rol ID" id="rol-id" type="text" handleInput={handleRolId}/>
+                                </div>
+                            </div>
                             <hr />
-                            <InputText hint="Organización" id="organizacion" type="text" handleInput={handleOrganizacion}/>
-                            <InputText hint="Website" id="website" type="text" handleInput={handleWebsite}/>
-                            <InputText hint="Imagen" id="imagen" type="text" handleInput={handleImagen}/>
-                            <InputText hint="Descripción" id="descripcion" type="text" handleInput={handleDescripcion}/>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >ORGANIZACIÓN</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Organización" id="organizacion" type="text" handleInput={handleOrganizacion}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >WEBSITE</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Website" id="website" type="text" handleInput={handleWebsite}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >IMAGEN</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Imagen" id="imagen" type="text" handleInput={handleImagen}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >DESCRIPCION</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Descripción" id="descripcion" type="text" handleInput={handleDescripcion}/>
+                                </div>
+                            </div>
                             <br />
                             <BotonPrincipal texto="Crear Usuario" callBack={registrarUsuario}></BotonPrincipal>
+                            </form>
                         </div>
                     </div>
                 </div>

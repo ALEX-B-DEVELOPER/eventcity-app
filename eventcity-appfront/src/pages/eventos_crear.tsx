@@ -75,17 +75,62 @@ export default function FormularioCrearEvento(){
                             <h1>Nuevo Evento</h1>
                             <Link to={"/eventos"} className="btn btn-primary">Atrás | Eventos</Link>
                             <hr />
-                            <InputText hint="Nombre del Evento" id="nombre" type="text" handleInput={handleNombre}/>
-                            <InputText hint="Inicia - Fecha/Hora" id="inicia" type="datetime-local" handleInput={handleInicia}/>
-                            <InputText hint="Finaliza - Fecha/Hora" id="finaliza" type="datetime-local" handleInput={handleFinaliza}/>
-                            <InputText hint="Dirección" id="direccion" type="text" handleInput={handleDireccion}/>
-                            <InputText hint="Mapa ubicación" id="mapaUbicacion" type="textarea" handleInput={handleMapaUbicacion}/>
-                            <InputText hint="Audiencia" id="audiencia" type="text" handleInput={handleAudiencia}/>
-                            <InputText hint="Categoria" id="categoria" type="text" handleInput={handleCategoria}/>
-                            <InputText hint="Imagen" id="imagen" type="text" handleInput={handleImagen}/>
-                            <InputText hint="Descripción" id="imagen" type="text" handleInput={handleDescripcion}/>
+                            <form>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >NOMBRE</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Nombre del Evento" id="nombre" type="text" handleInput={handleNombre}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >HORA INICIO/FIN</label>
+                                <div className="col-sm-5">
+                                <InputText hint="Inicia - Fecha/Hora" id="inicia" type="datetime-local" handleInput={handleInicia}/>
+                                </div>
+                                <div className="col-sm-4">
+                                <InputText hint="Finaliza - Fecha/Hora" id="finaliza" type="datetime-local" handleInput={handleFinaliza}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >DIRECCIÓN</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Dirección" id="direccion" type="text" handleInput={handleDireccion}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >MAPA</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Mapa ubicación" id="mapaUbicacion" type="textarea" handleInput={handleMapaUbicacion}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >AUDIENCIA</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Audiencia" id="audiencia" type="text" handleInput={handleAudiencia}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >CATEGORÍA</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Categoria" id="categoria" type="text" handleInput={handleCategoria}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >IMÁGEN</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Imagen" id="imagen" type="text" handleInput={handleImagen}/>
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label className="col-sm-3" >DESCRIPCIÓN</label>
+                                <div className="col-sm-9">
+                                <InputText hint="Descripción" id="imagen" type="text" handleInput={handleDescripcion}/>
+                                </div>
+                            </div>
+
                             <br />
                             <BotonPrincipal texto="Crear Evento" callBack={registrarEvento}></BotonPrincipal>
+                            </form>
                         </div>
                     </div>
                 </div>

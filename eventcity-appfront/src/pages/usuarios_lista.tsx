@@ -50,9 +50,9 @@ export default async function Usuarios() {
                           <td>{number.correo}</td>
                           <td>{number.rolId}</td>
                           <td>
-                          <Link to={""} className="btn btn-primary">Editar</Link>
+                          <Link to={""} className="btn btn-primary btn-sm">Editar</Link>
                           &nbsp;
-                          <Link to={""} className="btn btn-primary">Eliminar</Link>
+                          <Link to={""} className="btn btn-secondary btn-sm">Eliminar</Link>
                           </td>
                         </tr>
                       )}

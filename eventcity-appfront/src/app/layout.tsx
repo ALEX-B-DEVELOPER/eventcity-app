@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'EVENTCITY',
-  description: 'Hola',
+  description: 'Esta es una aplicacion de eventos y venta de tickets',
 }
 
 export default function RootLayout({

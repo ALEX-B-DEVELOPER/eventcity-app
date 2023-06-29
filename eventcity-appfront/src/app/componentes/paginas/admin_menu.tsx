@@ -42,21 +42,22 @@ export default function AdminMenu() {
 
       <div className='contenedor-admin-sidebar'> 
         <h3>ADMINISTRADOR</h3>
-        <img src='../../assets/profile.png'></img>
+        <img src='https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?s=612x612&w=0&k=20&c=BVOfS7mmvy2lnfBPghkN__k8OMsg7Nlykpgjn0YOHj0='></img>
         <p><strong>{sessionStorage.getItem("nombre")}</strong></p>
         <p><strong>correo@electronico.com</strong></p>
-        <a href="#">Editar Perfil</a>
-        <hr></hr>
+        <a href="#" className="btn btn-secondary btn-sm">Editar Perfil</a>
+        <br />
+        <br />
 
 
     <div className="list-group" id="list-tab" role="tablist">
       <Link className="nav-link list-group-item list-group-item-action" to="/usuarios">USUARIOS</Link>
       <Link className="nav-link list-group-item list-group-item-action" to="/eventos">EVENTOS</Link>
-      <a className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ENTRADAS</a>
-      <a className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">VENTAS</a>
+      <Link className="nav-link list-group-item list-group-item-action" to="/usuarios">ENTRADAS</Link>
+      <Link className="nav-link list-group-item list-group-item-action" to="/eventos">VENTAS</Link>
     </div>
     <br />
-    <a href="#">Cerrar Sessión</a>
+    <a href="#" className="btn btn-outline-danger btn-sm">SALIR</a>
     
       </div>
   )

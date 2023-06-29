@@ -59,8 +59,6 @@ export default function Registro() {
         <br />
         <InputText id='apellidos' hint="Apellidos" type='text' handleInput={handleInput} />
         <br />
-        <InputText id='id' hint="# CC/CE/NIT" type='text' handleInput={handleInput} />
-        <br />
         <InputText id='telefono' hint="Teléfono" type='text' handleInput={handleInput} />
         <br />
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />

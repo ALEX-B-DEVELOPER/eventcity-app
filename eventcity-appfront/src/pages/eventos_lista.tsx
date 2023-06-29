@@ -49,9 +49,9 @@ export default async function Eventos() {
                             <td>{number.finaliza}</td>
                             <td><img src={number.imagen}/></td>
                             <td>
-                                <Link to={""} className="btn btn-primary">Editar</Link>
+                                <Link to={""} className="btn btn-primary btn-sm">Editar</Link>
                                 &nbsp;
-                                <Link to={""} className="btn btn-primary">Eliminar</Link>
+                                <Link to={""} className="btn btn-secondary btn-sm">Eliminar</Link>
                             </td>
                         </tr>
                         )}
