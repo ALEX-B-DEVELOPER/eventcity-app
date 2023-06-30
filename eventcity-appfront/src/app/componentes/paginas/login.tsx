@@ -53,11 +53,10 @@ export default function Login() {
 
       <div className='col-sm-4 contenedor-formulario'>
         <h1>BIENVENIDO</h1>
-        <br />
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
-        <br />
+
         <InputText id='contrasena' hint="Contraseña" type='password' handleInput={handleInput} />
-        <br />
+
         <BotonPrincipal texto='Acceso' callBack={login} />
         <br />
         <br />

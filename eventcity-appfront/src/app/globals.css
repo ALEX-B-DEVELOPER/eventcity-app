@@ -23,6 +23,11 @@ form {
     margin: 50px auto;
 }
 
+form.form-inline {
+    display: flex;
+    width: 100%;
+}
+
 label {
     font-weight: 800;
     margin-top: 10px!important;
@@ -43,6 +48,7 @@ h3 {
 
 a.navbar-brand {
     color: #322272;
+    transition: 0.2s;
 }
 
 a.nav-link {
@@ -57,3 +63,4 @@ a.nav-link.list-group-item:hover{
     font-size: 110%;
     color: #0d6efd;
 }
+

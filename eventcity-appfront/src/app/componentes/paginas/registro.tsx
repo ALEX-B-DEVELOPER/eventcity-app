@@ -54,17 +54,11 @@ export default function Registro() {
 
       <div className='col-sm-4 contenedor-formulario'>
         <h1>REGISTRO</h1>
-        <br />
         <InputText id='nombres' hint="Nombres" type='text' handleInput={handleInput} />
-        <br />
         <InputText id='apellidos' hint="Apellidos" type='text' handleInput={handleInput} />
-        <br />
         <InputText id='telefono' hint="Teléfono" type='text' handleInput={handleInput} />
-        <br />
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
-        <br />
         <InputText id='contrasena' hint="Contraseña" type='password' handleInput={handleInput} />
-        <br />
         <a href="#">Acepto términos y condiciones.</a>
         <br />
         <br />

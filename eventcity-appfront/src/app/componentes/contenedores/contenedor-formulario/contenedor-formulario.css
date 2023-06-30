@@ -12,3 +12,7 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+.contenedor-formulario .inputTexto{
+    margin: 15px 0;
+}

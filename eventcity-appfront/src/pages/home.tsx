@@ -1,42 +1,21 @@
 "use client";
 import { Link, NavLink } from 'react-router-dom';
-import axios from 'axios';
-
+import InputText from '@/app/componentes/formularios/input_texto';
 
 export default function Home() {
-
-  const Home = async () => {
-    var log = [{ nombres: "", apellidos: "", correo: "" }]
-    await axios.get(`http://localhost:3001/usuarios`)
-      .then(function (response) {
-        console.log(response.data);
-        log = response.data
-      })
-      .catch(function (error) { });
-  
+ 
     return (
       <div>
-        <table className="table" >
-          <tbody>
-            {log.map((number) =>
-    
-              <tr>
-                <td>{number.apellidos}</td>
-                <td>{number.nombres}</td>
-                <td>{number.correo}</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+        <nav className="navbar navbar-search">
+          <form className="form-inline">
+            <InputText hint="Buscar Eventos..." id="buscar" type="search" handleInput={""}/>
+            <button className="btn btn-outline-light my-2 my-sm-0" type="submit" >Search</button>
+          </form>
+          
+        </nav>
+        <center><Link className="btn btn-outline-light" to="/resultados">EVENTOS</Link></center>
+
       </div>
+      
     )
-  
-  }
-  return (
-    <div className="container">
-      <div className='contenedor-principal'>
-        {Home()}
-      </div>
-    </div>
-  )
 }

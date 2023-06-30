@@ -1,0 +1,16 @@
+.contenedor-principal{
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #ffffff !important;
+    height: 100%;
+}
+
+.contenedor-principal div.resultados{
+    max-width: 620px;
+    margin: 0 auto;
+    background-color: #f8f9fa!important;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+}
+

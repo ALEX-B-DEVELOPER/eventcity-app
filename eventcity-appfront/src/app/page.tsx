@@ -12,6 +12,7 @@ import RootLayout from './layout';
 import Eventos from '@/pages/eventos_lista';
 import FormularioCrearEvento from '@/pages/eventos_crear';
 import FormularioCrearUsuario from '@/pages/usuarios_crear';
+import EventosResultados from '@/pages/vista_resultados';
 
 
 const Layout = () => {
@@ -71,6 +72,7 @@ export default function App() {
         <Route path="eventos" element={Eventos()} />
         <Route path="eventos/crear" element={<FormularioCrearEvento />} />
         <Route path="usuarios/crear" element={<FormularioCrearUsuario />} />
+        <Route path="resultados"element={EventosResultados()} />
       </Route>
     </Routes>
   </BrowserRouter>
