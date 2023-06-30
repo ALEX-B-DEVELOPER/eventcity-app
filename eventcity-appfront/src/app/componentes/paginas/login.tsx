@@ -5,7 +5,7 @@ import '../contenedores/contenedor-display/contenedor-display.css'
 import InputText from '../formularios/input_texto';
 import BotonPrincipal from '../formularios/boton_principal';
 import axios from 'axios';
-import { redirect, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
@@ -60,9 +60,10 @@ export default function Login() {
         <BotonPrincipal texto='Acceso' callBack={login} />
         <br />
         <br />
-        <a href="#">¿Perdiste tu contraseña? Click Aquí.</a>
+        <Link to="/registro">¿No tienes cuenta? Regístrate.</Link>
         <br />
-        <a href="#">¿No tienes cuenta? Regístrate.</a>
+        <Link to="/recuperar-cuenta">¿Perdiste tu contraseña? Click Aquí.</Link>
+        <a href="#"></a>
       </div>
 
       </div>

@@ -8,12 +8,13 @@ export default function Home() {
       <div>
         <nav className="navbar navbar-search">
           <form className="form-inline">
-            <InputText hint="Buscar Eventos..." id="buscar" type="search" handleInput={""}/>
-            <button className="btn btn-outline-light my-2 my-sm-0" type="submit" >Search</button>
+            <InputText hint="Buscar Eventos..." id="buscar" type="text" handleInput={""}/>
+            <Link className="btn btn-outline-light bi bi-search" to="/resultados"></Link>
           </form>
           
         </nav>
-        <center><Link className="btn btn-outline-light" to="/resultados">EVENTOS</Link></center>
+        <center></center>
+        <i className="bi bi-search"></i>
 
       </div>
       

@@ -31,10 +31,10 @@ export default async function EventosResultados() {
                             </div>
                             <div className="col">
                                 <h3>{number.nombre}</h3> <hr />
-                                Inicia: {number.inicia} <br />
-                                Finaliza {number.finaliza} <br />
-                                Dirección: {number.direccion} <br />
-                                Descripción: {number.descripcion} <br /> <br />
+                                <strong><i className="bi bi-calendar3"></i> Inicia: {number.inicia} </strong><br />
+                                <strong><i className="bi bi-calendar3"></i> Finaliza: {number.finaliza} </strong><br />
+                                <strong><i className="bi bi-geo-alt-fill"></i>{number.direccion} </strong><br />
+                                {number.descripcion} <br /> <br />
                                 <Link to={""} className="btn btn-outline-primary btn-sm">VER MÁS...</Link>
                             </div>
                         </div>

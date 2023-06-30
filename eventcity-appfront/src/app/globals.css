@@ -46,6 +46,7 @@ h3 {
     text-transform: uppercase;
 }
 
+
 a.navbar-brand {
     color: #322272;
     transition: 0.2s;
@@ -62,5 +63,22 @@ a.nav-link.list-group-item{
 a.nav-link.list-group-item:hover{
     font-size: 110%;
     color: #0d6efd;
+}
+
+nav.navbar.navbar-search {
+    margin-top: 14%;
+}
+
+nav.navbar.navbar-search .form-inline{
+    align-items: center;
+}
+
+.p-0 nav.navbar.navbar-search {
+    margin-top: 0%;
+}
+
+nav.navbar .bi::before {
+    font-weight: 900!important;
+    padding-right: 5px;
 }
 
