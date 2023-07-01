@@ -5,6 +5,7 @@ import BotonPrincipal from "@/app/componentes/formularios/boton_principal";
 import InputText from "@/app/componentes/formularios/input_texto";
 import AdminMenu from "@/app/componentes/paginas/admin_menu";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 export default function FormularioCrearUsuario(){
@@ -67,6 +68,12 @@ export default function FormularioCrearUsuario(){
             imagen: Imagen,
             descripcion: Descripcion
         })
+
+        Swal.fire(
+            'Nuevo Usuario',
+            'Usuario registrado exitosamente',
+            'success'
+          )
     }
 
     return(
