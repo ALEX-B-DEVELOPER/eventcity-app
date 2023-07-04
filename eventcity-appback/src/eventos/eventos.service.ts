@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Evento } from './modelos/eventos';
 import { EventoDto } from './dto/evento-dto';
-import { Usuario } from 'src/usuarios/modelos/Usuario';
 
 @Injectable()
 export class EventosService {
@@ -37,5 +36,5 @@ export class EventosService {
             }
         });
     }
-    
+
 }

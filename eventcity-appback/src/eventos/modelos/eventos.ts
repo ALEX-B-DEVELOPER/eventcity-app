@@ -1,5 +1,4 @@
 import { Column, Default, Model, Table } from "sequelize-typescript";
-import { Col } from "sequelize/types/utils";
 
 @Table
 export class Evento extends Model{
