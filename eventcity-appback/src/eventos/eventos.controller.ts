@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { EventosService } from './eventos.service';
 import { EventoDto } from './dto/evento-dto';
 
@@ -15,5 +15,10 @@ constructor(private service: EventosService){}
     @Post()
     insertarEvento(@Body() dto: EventoDto){
         return this.service.insertarProducto(dto)
+    }
+
+    @Get(':id')
+    eventoById(@Param('id', ParseIntPipe) id: number) {
+        return this.service.selectById(id)
     }
 }

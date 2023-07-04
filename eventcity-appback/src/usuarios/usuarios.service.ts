@@ -4,6 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { Usuario } from './modelos/Usuario';
 import { CrearUsuarioDto } from './dto/crear-usuario-dto';
 import { AuthDto } from 'src/autenticacion/dto/auth-dto';
+import { ActualizarUsuarioDto } from './dto/actualizar-usuario-dto';
 
 var md5 = require('md5');
 
@@ -35,8 +36,26 @@ export class UsuariosService {
     }
 
     select(): Promise<Usuario[]> {
-        return this.usuarioModel.findAll()
+        return this.usuarioModel.findAll();
     }
+
+    selectById(id: number): Promise<Usuario> {
+        return this.usuarioModel.findOne({
+            where: {
+                id: id,
+            }
+        });
+    }
+
+    update(id: number, dto: ActualizarUsuarioDto) {
+        return "aquí va la lógica para actualizar el usuario " + id;
+    }
+
+    remove(id: number) {
+        return "aquí va la lógica para eliminar el usuario " + id;
+    }
+
+
 
     async queryLogin(authDto: AuthDto) {
         const usuario = await this.usuarioModel.findOne({
