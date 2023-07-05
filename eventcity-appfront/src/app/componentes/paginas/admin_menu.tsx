@@ -53,7 +53,7 @@ export default function AdminMenu() {
     <div className="list-group" id="list-tab" role="tablist">
       <Link className="nav-link list-group-item list-group-item-action" to="/usuarios">USUARIOS</Link>
       <Link className="nav-link list-group-item list-group-item-action" to="/eventos">EVENTOS</Link>
-      <Link className="nav-link list-group-item list-group-item-action" to="/usuarios">ENTRADAS</Link>
+      <Link className="nav-link list-group-item list-group-item-action" to="/entradas">ENTRADAS</Link>
       <Link className="nav-link list-group-item list-group-item-action" to="/eventos">VENTAS</Link>
     </div>
     <br />

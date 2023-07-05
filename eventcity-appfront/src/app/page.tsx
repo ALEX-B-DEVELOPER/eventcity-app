@@ -14,6 +14,7 @@ import FormularioCrearEvento from '@/pages/eventos_crear';
 import FormularioCrearUsuario from '@/pages/usuarios_crear';
 import EventosResultados from '@/pages/vista_resultados';
 import Recuperar from './componentes/paginas/recuperar_cuenta';
+import Entradas from '@/pages/entradas_lista';
 
 
 const Layout = () => {
@@ -29,7 +30,7 @@ const Layout = () => {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item"><Link className="nav-link bi bi-search" to="/home">Inicio</Link></li>
+              <li className="nav-item"><Link className="nav-link bi bi-search" to="/">Inicio</Link></li>
               <li className="nav-item"><Link className="nav-link bi bi-bookmark-star-fill" to="/resultados">Eventos</Link></li>
               <li className="nav-item"><Link className="nav-link bi bi-person-circle" to="/login">Acceso</Link></li>
               <li className="nav-item"><Link className="nav-link bi bi-person-circle" to="/usuarios">Admin</Link></li>
@@ -52,7 +53,7 @@ export default function App() {
     <BrowserRouter basename="/">
     <Routes>
       <Route path="/" element={<Layout />}>
-      <Route path="home" element={Home()} />
+      <Route index element={Home()} />
         <Route path="login" element={<Login />} />
         <Route path="registro" element={<Registro />} />
         <Route path="recuperar-cuenta" element={<Recuperar />} />
@@ -62,6 +63,7 @@ export default function App() {
         <Route path="eventos/crear" element={<FormularioCrearEvento />} />
         <Route path="usuarios/crear" element={<FormularioCrearUsuario />} />
         <Route path="resultados"element={EventosResultados()} />
+        <Route path="entradas"element={Entradas()} />
       </Route>
     </Routes>
   </BrowserRouter>

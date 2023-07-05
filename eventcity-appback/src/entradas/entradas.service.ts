@@ -13,10 +13,10 @@ export class EntradasService {
 
     insertarEntrada(dto: EntradaDto): Promise<Entrada>{
         return this.entradaModel.create({
-            eventoid: dto.eventoId,
-            nombre: dto.nombreTicket,
+            eventoId: dto.eventoId,
+            nombreTicket: dto.nombreTicket,
             precio: dto.precio,
-            cantidad: dto.cantidadTickets,
+            cantidadTickets: dto.cantidadTickets,
             porcentajeDescuento: dto.porcentajeDescuento
         })
     }
