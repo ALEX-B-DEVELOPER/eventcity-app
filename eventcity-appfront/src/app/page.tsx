@@ -3,18 +3,18 @@ import React from 'react';
 
 import Login from './componentes/paginas/login';
 import Registro from './componentes/paginas/registro';
-import AdminMenu from './componentes/paginas/admin_menu';
 import Usuarios from '../pages/usuarios_lista'
 import Home from "@/pages/home";
 
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
-import RootLayout from './layout';
 import Eventos from '@/pages/eventos_lista';
 import FormularioCrearEvento from '@/pages/eventos_crear';
 import FormularioCrearUsuario from '@/pages/usuarios_crear';
 import EventosResultados from '@/pages/vista_resultados';
 import Recuperar from './componentes/paginas/recuperar_cuenta';
 import Entradas from '@/pages/entradas_lista';
+import FormularioCrearEntrada from '@/pages/entradas_crear';
+import VistaEvento from '@/pages/vista_evento';
 
 
 const Layout = () => {
@@ -57,13 +57,16 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="registro" element={<Registro />} />
         <Route path="recuperar-cuenta" element={<Recuperar />} />
-        <Route path="admin_panel" element={<AdminMenu />} />
+        <Route path="resultados"element={EventosResultados()} />
+        
+        <Route path="eventos/2"element={VistaEvento("2")} />
+
         <Route path="usuarios" element={Usuarios()} />
+        <Route path="usuarios/crear" element={<FormularioCrearUsuario />} />
         <Route path="eventos" element={Eventos()} />
         <Route path="eventos/crear" element={<FormularioCrearEvento />} />
-        <Route path="usuarios/crear" element={<FormularioCrearUsuario />} />
-        <Route path="resultados"element={EventosResultados()} />
         <Route path="entradas"element={Entradas()} />
+        <Route path="entradas/crear" element={<FormularioCrearEntrada />} />
       </Route>
     </Routes>
   </BrowserRouter>
