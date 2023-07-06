@@ -4,6 +4,10 @@ import '../contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import Image from "next/image";
+import UserImg from "@/app/assets/profile.png";
+
+
 export default function AdminMenu() {
   
   const [correo, setCorreo] = useState('')
@@ -42,7 +46,7 @@ export default function AdminMenu() {
 
       <div className='contenedor-admin-sidebar'> 
         <h3>ADMINISTRADOR</h3>
-        <img src='https://media.istockphoto.com/id/1300845620/fr/vectoriel/appartement-dic%C3%B4ne-dutilisateur-isol%C3%A9-sur-le-fond-blanc-symbole-utilisateur.jpg?s=612x612&w=0&k=20&c=BVOfS7mmvy2lnfBPghkN__k8OMsg7Nlykpgjn0YOHj0='></img>
+        <Image className="image-profile" src={UserImg} alt="User" />
         <p><strong>{sessionStorage.getItem("nombre")}</strong></p>
         <p><strong>correo@electronico.com</strong></p>
         <a href="#" className="btn btn-secondary btn-sm">Editar Perfil</a>

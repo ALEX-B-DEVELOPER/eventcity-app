@@ -16,13 +16,18 @@ import Entradas from '@/pages/entradas_lista';
 import FormularioCrearEntrada from '@/pages/entradas_crear';
 import VistaEvento from '@/pages/vista_evento';
 
+import Image from "next/image";
+import Logo from "@/app/assets/event-city.png";
+
 
 const Layout = () => {
   return (
     <main>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/home"><h2>EVENTCITY</h2></Link>
+        <Link className="navbar-brand" to="/home">
+          <Image src={Logo} alt="Logo" />
+        </Link>
         
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

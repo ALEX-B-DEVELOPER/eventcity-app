@@ -11,8 +11,8 @@ body{
 }
 
 img{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: auto;
 }
 div{
     background-color: transparent;
@@ -63,6 +63,11 @@ a.nav-link.list-group-item{
 a.nav-link.list-group-item:hover{
     font-size: 110%;
     color: #0d6efd;
+}
+
+.image-profile{
+    max-width: 100px;
+    max-height: 100px;
 }
 
 nav.navbar.navbar-search {
