@@ -3,18 +3,33 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import AdminMenu from "@/app/componentes/contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar";
 import '../app/componentes/contenedores/contenedor-admin-panel/contenedor-admin-panel.css';
+import { useState } from 'react';
 
 
-export default async function Entradas() {
+export default function Entradas() {
 
 
-    var log = [{ eventoId: 0, nombreTicket: "", precio: 0, cantidadTickets: 0, porcentajeDescuento: 0 }]
-    await axios.get(`http://localhost:3001/entradas`)
+  const [eventos, setEventos] = useState ([{ eventoId: 0, nombreTicket: "", precio: 0, cantidadTickets: 0, porcentajeDescuento: 0 }]);
+    axios.get(`http://localhost:3001/entradas`)
       .then(function (response) {
-        console.log(response.data);
-        log = response.data
+        setEventos(response.data)
       })
       .catch(function (error) { });
+
+      const table = eventos.map((eventos) =>
+              
+      <tr>
+        <td>{eventos.eventoId}</td>
+        <td>{eventos.nombreTicket}</td>
+        <td>{eventos.precio}</td>
+        <td>{eventos.cantidadTickets}</td>
+        <td>
+        <Link to={""} className="btn btn-primary btn-sm">Editar</Link>
+        &nbsp;
+        <Link to={""} className="btn btn-secondary btn-sm">Eliminar</Link>
+        </td>
+      </tr>
+    )
   
     return (
       <div className="container">
@@ -42,20 +57,7 @@ export default async function Entradas() {
                             </tr>
                     </thead>
                     <tbody>
-                      {log.map((number) =>
-              
-                        <tr>
-                          <td>{number.eventoId}</td>
-                          <td>{number.nombreTicket}</td>
-                          <td>{number.precio}</td>
-                          <td>{number.cantidadTickets}</td>
-                          <td>
-                          <Link to={""} className="btn btn-primary btn-sm">Editar</Link>
-                          &nbsp;
-                          <Link to={""} className="btn btn-secondary btn-sm">Eliminar</Link>
-                          </td>
-                        </tr>
-                      )}
+                      {table}
                     </tbody>
                   </table>
                   </div>

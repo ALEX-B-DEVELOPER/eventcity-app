@@ -63,15 +63,15 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="registro" element={<Registro />} />
         <Route path="recuperar-cuenta" element={<Recuperar />} />
-        <Route path="resultados"element={EventosResultados()} />
-        
+        <Route path="resultados"element={<EventosResultados/>} />
+        {/* Pendiente lógica para id dinamico VitsaEvento*/}
         <Route path="eventos/1"element={VistaEvento("1")} />
 
-        <Route path="usuarios" element={Usuarios()} />
+        <Route path="usuarios" element={<Usuarios/>} />
         <Route path="usuarios/crear" element={<FormularioCrearUsuario />} />
-        <Route path="eventos" element={Eventos()} />
+        <Route path="eventos" element={<Eventos/>} />
         <Route path="eventos/crear" element={<FormularioCrearEvento />} />
-        <Route path="entradas"element={Entradas()} />
+        <Route path="entradas"element={<Entradas/>} />
         <Route path="entradas/crear" element={<FormularioCrearEntrada />} />
       </Route>
     </Routes>
