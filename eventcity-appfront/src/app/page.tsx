@@ -22,6 +22,18 @@ import Logo from "@/app/assets/event-city.png";
 
 
 const Layout = () => {
+
+  let itemLogin;
+
+  if(sessionStorage.getItem("token") !== null){
+    itemLogin = (()=>{
+      return <li className="nav-item"><Link className="nav-link login-item bi bi-person-circle" to="/eventos">{sessionStorage.getItem("nombre")}</Link></li>})
+  }
+  else{
+    itemLogin = (()=>{
+      return <li className="nav-item"><Link className="nav-link bi bi-person-circle" to="/login">Acceso</Link></li>})
+  }
+
   return (
     <main>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,11 +50,10 @@ const Layout = () => {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item"><Link className="nav-link bi bi-search" to="/">Inicio</Link></li>
               <li className="nav-item"><Link className="nav-link bi bi-bookmark-star-fill" to="/resultados">Eventos</Link></li>
-              <li className="nav-item"><Link className="nav-link bi bi-person-circle" to="/login">Acceso</Link></li>
-              <li className="nav-item"><Link className="nav-link bi bi-person-circle" to="/usuarios">Admin</Link></li>
-
+              {itemLogin()}
             </ul>
           </div>
+          
         </div>
       </nav>
       
@@ -64,6 +75,7 @@ export default function App() {
         <Route path="registro" element={<Registro />} />
         <Route path="recuperar-cuenta" element={<Recuperar />} />
         <Route path="resultados"element={<EventosResultados/>} />
+        
         {/* Pendiente lógica para id dinamico VitsaEvento*/}
         <Route path="eventos/1"element={VistaEvento("1")} />
 

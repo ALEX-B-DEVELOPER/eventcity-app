@@ -36,13 +36,11 @@ export default function EventosResultados() {
         <div className="container-fluid p-0">
             {<Buscador/>} 
                     <div className='contenedor-principal'>
-                    <div className="container">
-                    <h3>Resultados</h3>
-                    <hr />
-                    <br />
-
-                        {table}
-
+                        <div className="container">
+                            <h3>Resultados</h3>
+                            <hr />
+                            <br />
+                            {table}
                     </div>
                 </div>
                 </div>

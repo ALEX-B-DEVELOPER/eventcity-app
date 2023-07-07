@@ -37,7 +37,7 @@ export default function Login() {
         console.log(response.data);
         SessionDataStorage(response.data.access_token, "token")
         SessionDataStorage(response.data.nombre, "nombre")
-        navigate("/home")
+        navigate("/")
       })
       .catch(function (error) {
         console.log(error);

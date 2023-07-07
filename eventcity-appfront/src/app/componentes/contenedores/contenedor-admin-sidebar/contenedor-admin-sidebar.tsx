@@ -1,13 +1,22 @@
 "use client";
 import React from 'react';
 import '@/app/componentes/contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Image from "next/image";
 import UserImg from "@/app/assets/profile.png";
 
 
 export default function AdminMenu() {
+
+
+  const navigate = useNavigate() 
+
+  const logOut = async () => {
+    sessionStorage.clear();
+    alert("Ud acaba de cerrar sección, vuelva pronto");
+    navigate("/");
+  }
   
   return (
 
@@ -28,7 +37,7 @@ export default function AdminMenu() {
       <Link className="nav-link list-group-item list-group-item-action" to="/eventos">VENTAS</Link>
     </div>
     <br />
-    <a href="#" className="btn btn-outline-danger btn-sm">SALIR</a>
+    <a href="#" className="btn btn-outline-danger btn-sm" onClick={logOut}>SALIR</a>
     
       </div>
   )

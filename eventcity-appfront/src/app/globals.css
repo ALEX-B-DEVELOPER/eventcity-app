@@ -56,6 +56,10 @@ a.nav-link {
     font-weight: 800;
 }
 
+.navbar a.nav-link {
+    padding: 0px 8px;
+}
+
 a.nav-link.list-group-item{
     color: #322272;
     transition: 0.2s;
@@ -80,6 +84,12 @@ nav.navbar.navbar-search .form-inline{
 
 .p-0 nav.navbar.navbar-search {
     margin-top: 0%;
+}
+
+nav.navbar .login-item{
+    background: #6c757d;
+    color: #fff;
+    border-radius: 5px;
 }
 
 nav.navbar .bi::before {
