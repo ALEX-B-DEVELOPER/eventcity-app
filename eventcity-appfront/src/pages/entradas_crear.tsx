@@ -3,7 +3,7 @@ import axios from "axios";
 import '../app/componentes/contenedores/contenedor-admin-panel/contenedor-admin-panel.css';
 import BotonPrincipal from "@/app/componentes/formularios/boton_principal";
 import InputText from "@/app/componentes/formularios/input_texto";
-import AdminMenu from "@/app/componentes/paginas/admin_menu";
+import AdminMenu from "@/app/componentes/contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 

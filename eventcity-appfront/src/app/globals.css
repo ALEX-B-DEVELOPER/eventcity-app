@@ -87,3 +87,7 @@ nav.navbar .bi::before {
     padding-right: 5px;
 }
 
+.table img {
+    max-width: 100px;
+}
+

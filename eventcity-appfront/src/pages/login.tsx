@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from 'react';
-import '../contenedores/contenedor-formulario/contenedor-formulario.css'
-import '../contenedores/contenedor-display/contenedor-display.css'
-import InputText from '../formularios/input_texto';
-import BotonPrincipal from '../formularios/boton_principal';
 import axios from 'axios';
+import { Link, redirect, useNavigate } from 'react-router-dom';
+import '@/app/componentes/contenedores/contenedor-formulario/contenedor-formulario.css';
+import '@/app/componentes/contenedores/contenedor-display/contenedor-display.css';
+import InputText from '@/app/componentes/formularios/input_texto';
+import BotonPrincipal from '@/app/componentes/formularios/boton_principal';
 
 
-export default function Recuperar() {
-  
+export default function Login() {
+
+  const navigate = useNavigate() 
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')
 
@@ -35,10 +37,10 @@ export default function Recuperar() {
         console.log(response.data);
         SessionDataStorage(response.data.access_token, "token")
         SessionDataStorage(response.data.nombre, "nombre")
+        navigate("/home")
       })
       .catch(function (error) {
         console.log(error);
-
       });
   }
   return (
@@ -46,18 +48,22 @@ export default function Recuperar() {
       <div className="row">
 
       <div className='col-sm-8 contenedor-display'> 
-        <h1>REESTABLECIMIENTO<br/>DE CONTRASEÑA</h1>
+        <h1>ACCEDE A <br/>NUESTRA <br/>PLATAFORMA <br/>DE EVENTOS</h1>
       </div>
 
       <div className='col-sm-4 contenedor-formulario'>
-        <h1>HE OLVIDADO <br /> LA CONTRASEÑA</h1>
-        <br />
-        Ingresa el correo electrónico registrado para recibir el reestablecimiento de la contraseña.
-        <br />
-        <br />
+        <h1>BIENVENIDO</h1>
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
+
+        <InputText id='contrasena' hint="Contraseña" type='password' handleInput={handleInput} />
+
+        <BotonPrincipal texto='Acceso' callBack={login} />
         <br />
-        <BotonPrincipal texto='Enviar' callBack={login} />
+        <br />
+        <Link to="/registro">¿No tienes cuenta? Regístrate.</Link>
+        <br />
+        <Link to="/recuperar-cuenta">¿Perdiste tu contraseña? Click Aquí.</Link>
+        <a href="#"></a>
       </div>
 
       </div>

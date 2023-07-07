@@ -2,7 +2,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import InputText from '@/app/componentes/formularios/input_texto';
 
-export default function Home() {
+export default function Buscador() {
  
     return (
       <div>
@@ -11,12 +11,7 @@ export default function Home() {
             <InputText hint="Buscar Eventos..." id="buscar" type="text" handleInput={""}/>
             <Link className="btn btn-outline-light bi bi-search" to="/resultados"></Link>
           </form>
-          
         </nav>
-        <center></center>
-        <i className="bi bi-search"></i>
-
       </div>
-      
     )
 }

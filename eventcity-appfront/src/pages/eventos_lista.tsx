@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
-import AdminMenu from "@/app/componentes/paginas/admin_menu";
+import AdminMenu from "@/app/componentes/contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar";
 import '../app/componentes/contenedores/contenedor-admin-panel/contenedor-admin-panel.css';
 
 

@@ -1,17 +1,17 @@
 "use client";
 import React from 'react';
 
-import Login from './componentes/paginas/login';
-import Registro from './componentes/paginas/registro';
+import Login from '../pages/login';
+import Registro from '../pages/registro';
 import Usuarios from '../pages/usuarios_lista'
-import Home from "@/pages/home";
+import Buscador from '@/pages/buscador';
 
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 import Eventos from '@/pages/eventos_lista';
 import FormularioCrearEvento from '@/pages/eventos_crear';
 import FormularioCrearUsuario from '@/pages/usuarios_crear';
 import EventosResultados from '@/pages/vista_resultados';
-import Recuperar from './componentes/paginas/recuperar_cuenta';
+import Recuperar from '../pages/recuperar_cuenta';
 import Entradas from '@/pages/entradas_lista';
 import FormularioCrearEntrada from '@/pages/entradas_crear';
 import VistaEvento from '@/pages/vista_evento';
@@ -20,12 +20,13 @@ import Image from "next/image";
 import Logo from "@/app/assets/event-city.png";
 
 
+
 const Layout = () => {
   return (
     <main>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/home">
+        <Link className="navbar-brand" to="/">
           <Image src={Logo} alt="Logo" />
         </Link>
         
@@ -57,14 +58,14 @@ export default function App() {
   return(
     <BrowserRouter basename="/">
     <Routes>
-      <Route path="/" element={<Layout />}>
-      <Route index element={Home()} />
+        <Route path="/" element={<Layout />}>
+        <Route index element={<Buscador/>} />
         <Route path="login" element={<Login />} />
         <Route path="registro" element={<Registro />} />
         <Route path="recuperar-cuenta" element={<Recuperar />} />
         <Route path="resultados"element={EventosResultados()} />
         
-        <Route path="eventos/2"element={VistaEvento("2")} />
+        <Route path="eventos/1"element={VistaEvento("1")} />
 
         <Route path="usuarios" element={Usuarios()} />
         <Route path="usuarios/crear" element={<FormularioCrearUsuario />} />

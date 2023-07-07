@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import '../contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar.css';
-import axios from 'axios';
+import React from 'react';
+import '@/app/componentes/contenedores/contenedor-admin-sidebar/contenedor-admin-sidebar.css';
 import { Link } from 'react-router-dom';
 
 import Image from "next/image";
@@ -10,38 +9,6 @@ import UserImg from "@/app/assets/profile.png";
 
 export default function AdminMenu() {
   
-  const [correo, setCorreo] = useState('')
-  const [contrasena, setContrasena] = useState('')
-
-  function handleInput(valor: string, name: string) {
-    console.log(valor, name);
-    if (name === "correo") {
-      setCorreo(valor)
-    } else {
-      setContrasena(valor)
-    }
-  }
-
-  const SessionDataStorage = (valor: string, name:string) => {
-    sessionStorage.setItem(name, valor);
-  };
-
-
-  const login = async () => {
-    axios.post(`http://localhost:3001/autenticacion/login`, {
-      correo: correo,
-      contrasena: contrasena
-    })
-      .then(function (response) {
-        console.log(response.data);
-        SessionDataStorage(response.data.access_token, "token")
-        SessionDataStorage(response.data.nombre, "nombre")
-      })
-      .catch(function (error) {
-        console.log(error);
-
-      });
-  }
   return (
 
       <div className='contenedor-admin-sidebar'> 

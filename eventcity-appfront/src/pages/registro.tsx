@@ -1,16 +1,16 @@
 "use client";
 import React, { useState } from 'react';
-import '../contenedores/contenedor-formulario/contenedor-formulario.css'
-import '../contenedores/contenedor-display/contenedor-display.css'
-import InputText from '../formularios/input_texto';
-import BotonPrincipal from '../formularios/boton_principal';
+
+import '@/app/componentes/contenedores/contenedor-formulario/contenedor-formulario.css';
+import '@/app/componentes/contenedores/contenedor-display/contenedor-display.css';
+import InputText from '@/app/componentes/formularios/input_texto';
+import BotonPrincipal from '@/app/componentes/formularios/boton_principal';
+
 import axios from 'axios';
-import { Link, redirect, useNavigate } from 'react-router-dom';
 
 
-export default function Login() {
-
-  const navigate = useNavigate() 
+export default function Registro() {
+  
   const [correo, setCorreo] = useState('')
   const [contrasena, setContrasena] = useState('')
 
@@ -37,10 +37,10 @@ export default function Login() {
         console.log(response.data);
         SessionDataStorage(response.data.access_token, "token")
         SessionDataStorage(response.data.nombre, "nombre")
-        navigate("/home")
       })
       .catch(function (error) {
         console.log(error);
+
       });
   }
   return (
@@ -48,22 +48,24 @@ export default function Login() {
       <div className="row">
 
       <div className='col-sm-8 contenedor-display'> 
-        <h1>ACCEDE A <br/>NUESTRA <br/>PLATAFORMA <br/>DE EVENTOS</h1>
+        <h1>REGÍSTRATE EN <br/>NUESTRA PLATAFORMA<br/>PARA QUE NO TE PIERDAS <br/>NINGÚN EVENTO...</h1>
+        <br />
+        <br />
+        <p>Si quieres registrarte como organizador contáctanos haciendo click aquí. </p>
       </div>
 
       <div className='col-sm-4 contenedor-formulario'>
-        <h1>BIENVENIDO</h1>
+        <h1>REGISTRO</h1>
+        <InputText id='nombres' hint="Nombres" type='text' handleInput={handleInput} />
+        <InputText id='apellidos' hint="Apellidos" type='text' handleInput={handleInput} />
+        <InputText id='telefono' hint="Teléfono" type='text' handleInput={handleInput} />
         <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
-
         <InputText id='contrasena' hint="Contraseña" type='password' handleInput={handleInput} />
-
-        <BotonPrincipal texto='Acceso' callBack={login} />
+        <a href="#">Acepto términos y condiciones.</a>
         <br />
         <br />
-        <Link to="/registro">¿No tienes cuenta? Regístrate.</Link>
-        <br />
-        <Link to="/recuperar-cuenta">¿Perdiste tu contraseña? Click Aquí.</Link>
-        <a href="#"></a>
+        <BotonPrincipal texto='Registrarse' callBack={login} />
+        <br />        
       </div>
 
       </div>

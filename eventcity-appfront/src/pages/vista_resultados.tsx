@@ -1,9 +1,7 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import '../app/componentes/contenedores/contenedor-principal/contenedor-principal.css';
-import Home from "./home";
-import BotonPrincipal from "@/app/componentes/formularios/boton_principal";
-import Evento from "./vista_evento";
+import Buscador from "./buscador";
 
 export default async function EventosResultados() {
 
@@ -18,7 +16,7 @@ export default async function EventosResultados() {
     return(
 
         <div className="container-fluid p-0">
-            {<Home />} 
+            {<Buscador/>} 
                     <div className='contenedor-principal'>
                     <div className="container">
                     <h3>Resultados</h3>

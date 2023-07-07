@@ -1,7 +1,6 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
 import '../app/componentes/contenedores/contenedor-principal/contenedor-principal.css';
-import Home from "./home";
+import Buscador from "./buscador";
 
 export default async function VistaEvento(id: string) {
 
@@ -24,7 +23,7 @@ export default async function VistaEvento(id: string) {
     return(
 
         <div className="container-fluid p-0">
-            {<Home />} 
+            {<Buscador />} 
                     <div className='contenedor-principal'>
                     <div className="container">
                     <h3>Resultados</h3>
@@ -46,6 +45,6 @@ export default async function VistaEvento(id: string) {
 
                     </div>
                 </div>
-                </div>
+            </div>
     )
 }
