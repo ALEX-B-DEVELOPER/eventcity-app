@@ -12,7 +12,7 @@ export class Usuario extends Model {
     correo: string
     @Column
     contrena: string
-    @Default(1)
+    @Default(3)
     @Column
     rolId: number
 

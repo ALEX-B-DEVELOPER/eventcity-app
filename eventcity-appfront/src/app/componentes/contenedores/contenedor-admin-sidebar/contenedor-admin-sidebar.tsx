@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Image from "next/image";
 import UserImg from "@/app/assets/profile.png";
+import Swal from 'sweetalert2';
 
 
 export default function AdminMenu() {
@@ -14,7 +15,11 @@ export default function AdminMenu() {
 
   const logOut = async () => {
     sessionStorage.clear();
-    alert("Ud acaba de cerrar sección, vuelva pronto");
+    Swal.fire(
+      'Vuelva pronto',
+      'Usted ha cerrado sessón correctamente',
+      'success'
+    )
     navigate("/");
   }
   

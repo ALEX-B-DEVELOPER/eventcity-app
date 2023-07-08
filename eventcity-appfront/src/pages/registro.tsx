@@ -7,42 +7,52 @@ import InputText from '@/app/componentes/formularios/input_texto';
 import BotonPrincipal from '@/app/componentes/formularios/boton_principal';
 
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Registro() {
-  
-  const [correo, setCorreo] = useState('')
-  const [contrasena, setContrasena] = useState('')
 
-  function handleInput(valor: string, name: string) {
-    console.log(valor, name);
-    if (name === "correo") {
-      setCorreo(valor)
-    } else {
-      setContrasena(valor)
-    }
-  }
+  const navigate = useNavigate() 
 
-  const SessionDataStorage = (valor: string, name:string) => {
-    sessionStorage.setItem(name, valor);
-  };
+  const [Nombres, setNombres] = useState('')
+  const [Apellidos, setApellidos] = useState('')
+  const [Telefono, setTelefono] = useState('')
+  const [Correo, setCorreo] = useState('')
+  const [Contrasena, setContrasena] = useState('')
 
+  const handleNombres = (e: string)=>{
+    setNombres(e)
+}
+const handleApellidos = (e: string)=>{
+    setApellidos(e)
+}
+const handleTelefono = (e: string)=>{
+    setTelefono(e)
+}
+const handleCorreo = (e: string)=>{
+    setCorreo(e)
+}
+const handleContrasena = (e: string)=>{
+    setContrasena(e)
+}
 
-  const login = async () => {
-    axios.post(`http://localhost:3001/autenticacion/login`, {
-      correo: correo,
-      contrasena: contrasena
+  const registrarUsuario = () => {
+    axios.post(`http://localhost:3001/usuarios`,{
+        nombres: Nombres,
+        apellidos: Apellidos,
+        correo: Correo,
+        contrena: Contrasena,
+        telefono: Telefono
     })
-      .then(function (response) {
-        console.log(response.data);
-        SessionDataStorage(response.data.access_token, "token")
-        SessionDataStorage(response.data.nombre, "nombre")
-      })
-      .catch(function (error) {
-        console.log(error);
 
-      });
-  }
+    Swal.fire(
+        'Nuevo Usuario',
+        'Usuario registrado exitosamente',
+        'success'
+      )
+      navigate("/");
+}
   return (
     <div className="container">
       <div className="row">
@@ -56,15 +66,15 @@ export default function Registro() {
 
       <div className='col-sm-4 contenedor-formulario'>
         <h1>REGISTRO</h1>
-        <InputText id='nombres' hint="Nombres" type='text' handleInput={handleInput} />
-        <InputText id='apellidos' hint="Apellidos" type='text' handleInput={handleInput} />
-        <InputText id='telefono' hint="Teléfono" type='text' handleInput={handleInput} />
-        <InputText id='correo' hint="Correo" type='text' handleInput={handleInput} />
-        <InputText id='contrasena' hint="Contraseña" type='password' handleInput={handleInput} />
+        <InputText id='nombres' hint="Nombres" type='text' handleInput={handleNombres} />
+        <InputText id='apellidos' hint="Apellidos" type='text' handleInput={handleApellidos} />
+        <InputText id='telefono' hint="Teléfono" type='text' handleInput={handleTelefono} />
+        <InputText id='correo' hint="Correo" type='text' handleInput={handleCorreo} />
+        <InputText id='contrasena' hint="Contraseña" type='password' handleInput={handleContrasena} />
         <a href="#">Acepto términos y condiciones.</a>
         <br />
         <br />
-        <BotonPrincipal texto='Registrarse' callBack={login} />
+        <BotonPrincipal texto='Registrarse' callBack={registrarUsuario} />
         <br />        
       </div>
 
